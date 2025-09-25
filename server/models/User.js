@@ -17,8 +17,8 @@ const userSchema = new mongoose.Schema({
 
   password:{
     type:String,
-    required:true,
-    minlength:[6,'Min 6 characters']
+    required:[true, 'Password is required'],
+    minlength:[6,' Password must be at least 6 characters characters']
   },
 
   profileImage:{
@@ -34,4 +34,4 @@ const userSchema = new mongoose.Schema({
 },{timestamps:true} )
 
 
-export default userSchema
+export default mongoose.model('User',userSchema)
